@@ -31,5 +31,8 @@
         "Food",
         "Supplychain",
         "Application"
-    ]
+    ],
+    "devDependencies": {
+        "nodemon": "^1.18.4"
+    }
 }

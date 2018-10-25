@@ -20,9 +20,11 @@ const middlewares = [
         cookie: { maxAge: 60000}
     }),
     flash()
-]
+];
+
 app.use(middlewares)
 app.use(express.static(path.join(__dirname, 'views')));
+
 app.set('view engine', 'ejs');
 require('./routes/routes.js')(app);
 
@@ -38,5 +40,5 @@ app.use((err, req, res, next) => {
 var port = process.env.PORT || 8000;
 
 app.listen(port,function(){
-    console.log("Live on port: " + port);
+    console.log("Listening on port: " + port);
 });

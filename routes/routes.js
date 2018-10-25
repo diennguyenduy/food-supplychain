@@ -5,4 +5,5 @@ module.exports = function(app) {
         routes.index(req, res);
     });
 
+    app.post()
 }
