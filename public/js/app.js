@@ -1,4 +1,3 @@
-
 'use strict';
 
 var app = angular.module('application', []);
@@ -14,7 +13,7 @@ app.controller('appController', function($scope, appFactory){
 		var id = $scope.query_id;
 		appFactory.querySource(id, function(data){
 			$scope.query_source = data;
-			if ($scope.query_tuna == "Could not locate tuna"){
+			if ($scope.query_item == "Could not locate item"){
 				console.log()
 				$("#error_query").show();
 			} else{
@@ -26,7 +25,7 @@ app.controller('appController', function($scope, appFactory){
 		var id = $scope.query_id;
 		appFactory.queryPart(id, function(data){
 			$scope.part_source = data;
-			if ($scope.query_tuna == "Could not locate tuna"){
+			if ($scope.query_item == "Could not locate item"){
 				console.log()
 				$("#error_query").show();
 			} else{
@@ -38,7 +37,7 @@ app.controller('appController', function($scope, appFactory){
 		var id = $scope.query_id;
 		appFactory.queryTransit(id, function(data){
 			$scope.transit_source = data;
-			if ($scope.query_tuna == "Could not locate tuna"){
+			if ($scope.query_item == "Could not locate item"){
 				console.log()
 				$("#error_query").show();
 			} else{
@@ -51,7 +50,7 @@ app.controller('appController', function($scope, appFactory){
 app.factory('appFactory', function($http){
 	var factory = {};
 	factory.querySource = function(id, callback){
-    	$http.get('/source/'+id).success(function(output){
+    	$http.get('/food/'+id).success(function(output){
 			callback(output)
 		});
 	}

@@ -37,8 +37,8 @@ func (a *FoodChainCode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 
     if fn == "addFoodProInfo"{
         return a.addFoodProInfo(stub,args)
-    }else if fn == "getProInfo"{
-        return a.getProInfo(stub,args)
+    }else if fn == "getFoodProInfo"{
+        return a.getFoodProInfo(stub,args)
     }
 
     return shim.Error("Recevied unkown function invocation")
@@ -80,7 +80,7 @@ func (a *FoodChainCode) addFoodProInfo(stub shim.ChaincodeStubInterface, args []
 }
 
 
-func(a *FoodChainCode) getProInfo (stub shim.ChaincodeStubInterface,args []string) pb.Response{
+func(a *FoodChainCode) getFoodProInfo (stub shim.ChaincodeStubInterface,args []string) pb.Response{
 
     if len(args) != 1{
         return shim.Error("Incorrect number of arguments.")

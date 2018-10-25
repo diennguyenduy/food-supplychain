@@ -11,8 +11,15 @@ module.exports = function(app) {
 
     app.post('/addFood', function (req, res) {
         var function_name = 'addFoodProInfo';
-        routes.additem(req, res, function_name);
+        routes.addItem(req, res, function_name);
     });
 
-    app.get('/')
+    app.get('/queryFood', function (req, res) {
+        routes.queryFood(req, res);
+    });
+
+    app.get('/food/:id', function (req, res) {
+        var function_name = 'getFoodProInfo';
+        routes.queryItem(req, res, function_name);
+    });
 }
