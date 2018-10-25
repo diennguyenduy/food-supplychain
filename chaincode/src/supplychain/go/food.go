@@ -28,22 +28,23 @@ type ProInfo struct{
 }
 
 
-func (t *FoodChainCode) Init(stub shim.ChaincodeStubInterface) pb.Response {
-    return shim.Success(nil)
+func (a *FoodChainCode) Init(stub shim.ChaincodeStubInterface) pb.Response {
+     return shim.Success(nil)
 }
 
-func (t *FoodChainCode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
+func (a *FoodChainCode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
     fn,args := stub.GetFunctionAndParameters()
-    if fn == "addProInfo"{
-        return t.addProInfo(stub,args)
+
+    if fn == "addFoodProInfo"{
+        return a.addFoodProInfo(stub,args)
     }else if fn == "getProInfo"{
-        return t.getProInfo(stub,args)
+        return a.getProInfo(stub,args)
     }
 
     return shim.Error("Recevied unkown function invocation")
 }
 
-func (t *FoodChainCode) addProInfo(stub shim.ChaincodeStubInterface, args []string) pb.Response {
+func (a *FoodChainCode) addFoodProInfo(stub shim.ChaincodeStubInterface, args []string) pb.Response {
     var err error
     var FoodInfos FoodInfo
 
@@ -79,7 +80,7 @@ func (t *FoodChainCode) addProInfo(stub shim.ChaincodeStubInterface, args []stri
 }
 
 
-func(t *FoodChainCode) getProInfo (stub shim.ChaincodeStubInterface,args []string) pb.Response{
+func(a *FoodChainCode) getProInfo (stub shim.ChaincodeStubInterface,args []string) pb.Response{
 
     if len(args) != 1{
         return shim.Error("Incorrect number of arguments.")

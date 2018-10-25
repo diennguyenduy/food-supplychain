@@ -1,10 +1,9 @@
 body{
-	background-image: url("css/business_search.jpg");
-	background-size: cover;
+    background-image: url("./business_search.jpg");
+    background-size: cover;
 }
-
 .form-style-10{
-    width:450px;
+    max-width:450px;
     padding:30px;
     margin:40px auto;
     background: #FFF;
@@ -17,7 +16,7 @@ body{
 }
 .form-style-10 .inner-wrap{
     padding: 30px;
-    background: #F8F8F8;
+    background: #2A88AD;
     border-radius: 6px;
     margin-bottom: 15px;
 }
@@ -43,8 +42,8 @@ body{
 }
 .form-style-10 label{
     display: block;
-    font: 13px Arial, Helvetica, sans-serif;
-    color: #888;
+    font: bold 15px Arial, Helvetica;
+    color: #fff;
     margin-bottom: 15px;
 }
 .form-style-10 input[type="text"],
@@ -78,20 +77,7 @@ body{
     color: #2A88AD;
     margin-bottom: 5px;
 }
-.form-style-10 .section span {
-    background: #2A88AD;
-    padding: 5px 10px 5px 10px;
-    position: absolute;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border: 4px solid #fff;
-    font-size: 14px;
-    margin-left: -45px;
-    color: #fff;
-    margin-top: -3px;
-}
-.form-style-10 input[type="button"], 
+.form-style-10 input[type="button"],
 .form-style-10 input[type="submit"]{
     background: #2A88AD;
     padding: 8px 20px 8px 20px;
@@ -107,18 +93,10 @@ body{
     border: 1px solid #257C9E;
     font-size: 15px;
 }
-.form-style-10 input[type="button"]:hover, 
+.form-style-10 input[type="button"]:hover,
 .form-style-10 input[type="submit"]:hover{
     background: #2A6881;
     -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
     -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
     box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
-}
-.form-style-10 .privacy-policy{
-    float: right;
-    width: 250px;
-    font: 12px Arial, Helvetica, sans-serif;
-    color: #4D4D4D;
-    margin-top: 10px;
-    text-align: right;
 }
