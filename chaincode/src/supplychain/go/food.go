@@ -6,12 +6,14 @@ import (
     "github.com/hyperledger/fabric/core/chaincode/shim"
     pb "github.com/hyperledger/fabric/protos/peer"
 )
+
 type FoodChainCode struct{
 }
 
 type FoodInfo struct{
     FoodID string `json:FoodID`                             //食品ID
     FoodProInfo ProInfo `json:FoodProInfo`                  //生产信息
+    FoodIncomeInfo []string
 }
 
 //生产信息
@@ -66,6 +68,7 @@ func (a *FoodChainCode) addFoodProInfo(stub shim.ChaincodeStubInterface, args []
     FoodInfos.FoodProInfo.FoodMFRSName = args[7]
     FoodInfos.FoodProInfo.FoodProPrice = args[8]
     FoodInfos.FoodProInfo.FoodProPlace = args[9]
+
     ProInfosJSONasBytes,err := json.Marshal(FoodInfos)
     if err != nil{
         return shim.Error(err.Error())
@@ -106,6 +109,7 @@ func(a *FoodChainCode) getFoodProInfo (stub shim.ChaincodeStubInterface,args []s
             continue
         }
     }
+
     jsonsAsBytes,err := json.Marshal(foodProInfo)
     if err != nil {
         return shim.Error(err.Error())
